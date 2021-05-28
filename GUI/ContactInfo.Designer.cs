@@ -96,6 +96,7 @@ namespace GUI
             // EditOrAdd
             // 
             this.EditOrAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.EditOrAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.EditOrAdd.Location = new System.Drawing.Point(558, 18);
             this.EditOrAdd.Name = "EditOrAdd";
             this.EditOrAdd.Size = new System.Drawing.Size(112, 26);

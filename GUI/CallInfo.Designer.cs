@@ -87,7 +87,7 @@ namespace GUI
             // timeStart
             // 
             this.timeStart.AutoSize = true;
-            this.timeStart.Location = new System.Drawing.Point(157, 29);
+            this.timeStart.Location = new System.Drawing.Point(117, 29);
             this.timeStart.Name = "timeStart";
             this.timeStart.Size = new System.Drawing.Size(70, 17);
             this.timeStart.TabIndex = 15;

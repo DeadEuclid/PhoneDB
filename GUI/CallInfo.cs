@@ -22,7 +22,7 @@ namespace GUI
             firstName.Text = call.Caller.FirstName;
             nickName.Text = call.Caller.Nick;
             description.Text =      call.Description;
-            phoneNum.Text = call.Caller.ToString();
+            phoneNum.Text = call.Caller.PhoneNumber;
             topic.Text = call.Topic;
             timeStart.Text = call.StartTimeToString;
             duration.Text = call.DurationToString;

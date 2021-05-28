@@ -18,8 +18,8 @@ namespace GUI
         public MainForm()
         {
             InitializeComponent();
-            viewCalls = new BindingList<viewCall>(Context.Calls.ToList().Select(call=>new viewCall(call)).ToList());
-            viewContacts = new BindingList<viewContact>(Context.Contacts.ToList().Select(contact=>new viewContact(contact)).ToList());
+            updateCalls();
+            updateContacts();
         }
         private BindingList<viewCall> viewCalls;
         private BindingList<viewContact> viewContacts;
@@ -38,7 +38,14 @@ namespace GUI
                 viewContacts.Add(new viewContact((Contact)model));
 
         }
-
+        private void updateCalls()
+        { 
+        viewCalls=new BindingList<viewCall>(Context.Calls.ToList().Select(call=>new viewCall(call)).ToList());
+        }
+        private void updateContacts()
+        {
+            viewContacts = new BindingList<viewContact>(Context.Contacts.ToList().Select(contact => new viewContact(contact)).ToList());
+        }
         private void callsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGrid.DataSource = viewCalls;
@@ -58,6 +65,8 @@ namespace GUI
                 moreInfo = new ContactInfo((Contact)((viewContact)choseItem).GetData());
             }
             moreInfo.ShowDialog();
+            updateCalls();
+            updateContacts();
         }
 
         private void referenceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +86,7 @@ namespace GUI
             if (dResult==DialogResult.OK)
             {
                 addRow(addContact.GetContact);
+                updateCalls();
             }
 
         }
@@ -88,6 +98,7 @@ namespace GUI
             if (dResult==DialogResult.OK)
             {
                 addRow(addCallForm.GetCall);
+                updateContacts();
             }
 
         }

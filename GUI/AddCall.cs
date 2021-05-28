@@ -21,7 +21,10 @@ namespace GUI
             var time = DateTime.Now;
             minuteStart.Value = time.Minute;
             hourStart.Value = time.Hour;
-            caller.Items.AddRange(context.Contacts.ToList().Select(contact => contact.Title).ToArray());
+            caller.DataSource = context.Contacts.ToList();
+            caller.ValueMember="Id";
+            caller.DisplayMember = "Title";
+
         }
         private NumericUpDown curent;
         private void timer1_Tick(object sender, EventArgs e)
@@ -69,14 +72,20 @@ namespace GUI
         {
             var context = new Context();
             var result = new Call();
-            result.Caller = context.Contacts.ToList().First(contact => contact.Title == contact.Title);
+
+            result.Caller = context.Contacts.ToList().First(c=>c.Id==(int)caller.SelectedValue);
             result.Description = Description.Text;
             result.Topic = Topic.Text;
+
             var dateStartValue = dateStart.Value;
+
             result.StartTime =
-                new DateTime(dateStartValue.Year, dateStartValue.Month, dateStartValue.Day, (int)hour.Value, (int)minute.Value, (int)second.Value);
+                new DateTime(dateStartValue.Year, dateStartValue.Month, dateStartValue.Day,
+                (int)hour.Value, (int)minute.Value, (int)second.Value);
+
             result.IsInput = Type.Text == "Входящий" ? true : false;
             result.Duration = new TimeSpan((int)hour.Value, (int)minute.Value, (int)second.Value);
+
             context.Calls.Add(result);
             GetCall = result;
             DialogResult = DialogResult.OK;
