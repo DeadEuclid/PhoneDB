@@ -94,14 +94,20 @@ namespace GUI
                 var contact = context.Contacts.Where(cont => cont.Id == InputContact.Id).First();
                 AssemblyContact(contact);
                 context.SaveChanges();
-                    Close();
+
                 }
 
             }
+            Close();
 
         }
         public Contact GetContact { get; private set; }
         private void contactGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butonsGroup_Enter(object sender, EventArgs e)
         {
 
         }

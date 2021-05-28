@@ -71,6 +71,7 @@ namespace GUI
             this.butonsGroup.TabIndex = 17;
             this.butonsGroup.TabStop = false;
             this.butonsGroup.Text = "Управление";
+            this.butonsGroup.Enter += new System.EventHandler(this.butonsGroup_Enter);
             // 
             // Cansel
             // 

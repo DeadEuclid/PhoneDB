@@ -39,6 +39,7 @@ namespace GUI
             var call = context.Calls.Where(c => c.Id == InputCall.Id).First();
             GetCall(call);
             context.SaveChanges();
+            Close();
         }
 
         private Call GetCall(Call modyfingCall)
