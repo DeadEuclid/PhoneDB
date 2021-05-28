@@ -29,82 +29,19 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ContactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CallsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.популярныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.contactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContactToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.referenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.callsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.referenceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.moreInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ContactsToolStripMenuItem,
-            this.CallsToolStripMenuItem,
-            this.выходToolStripMenuItem,
-            this.справкаToolStripMenuItem,
-            this.справкаToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ContactsToolStripMenuItem
-            // 
-            this.ContactsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.популярныеToolStripMenuItem});
-            this.ContactsToolStripMenuItem.Name = "ContactsToolStripMenuItem";
-            this.ContactsToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.ContactsToolStripMenuItem.Text = "Контакты";
-            this.ContactsToolStripMenuItem.Click += new System.EventHandler(this.ContactsToolStripMenuItem_Click);
-            // 
-            // CallsToolStripMenuItem
-            // 
-            this.CallsToolStripMenuItem.Name = "CallsToolStripMenuItem";
-            this.CallsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.CallsToolStripMenuItem.Text = "Звонки";
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.выходToolStripMenuItem.Text = "Выход";
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always;
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            // 
-            // справкаToolStripMenuItem1
-            // 
-            this.справкаToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
-            this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(81, 24);
-            this.справкаToolStripMenuItem1.Text = "Справка";
-            // 
-            // популярныеToolStripMenuItem
-            // 
-            this.популярныеToolStripMenuItem.Name = "популярныеToolStripMenuItem";
-            this.популярныеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.популярныеToolStripMenuItem.Text = "Популярные";
             // 
             // dataGridView1
             // 
@@ -112,12 +49,88 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 419);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 418);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contactsToolStripMenuItem,
+            this.callsToolStripMenuItem,
+            this.exitToolStripMenuItem,
+            this.referenceToolStripMenuItem1,
+            this.moreInfoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // contactsToolStripMenuItem
+            // 
+            this.contactsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addContactToolStripMenuItem1,
+            this.referenceToolStripMenuItem});
+            this.contactsToolStripMenuItem.Name = "contactsToolStripMenuItem";
+            this.contactsToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.contactsToolStripMenuItem.Text = "Контакты";
+            this.contactsToolStripMenuItem.Click += new System.EventHandler(this.contactsToolStripMenuItem_Click);
+            // 
+            // addContactToolStripMenuItem1
+            // 
+            this.addContactToolStripMenuItem1.Name = "addContactToolStripMenuItem1";
+            this.addContactToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.addContactToolStripMenuItem1.Text = "Добавить";
+            this.addContactToolStripMenuItem1.Click += new System.EventHandler(this.addContactToolStripMenuItem1_Click);
+            // 
+            // referenceToolStripMenuItem
+            // 
+            this.referenceToolStripMenuItem.Name = "referenceToolStripMenuItem";
+            this.referenceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.referenceToolStripMenuItem.Text = "Справка";
+            this.referenceToolStripMenuItem.Click += new System.EventHandler(this.referenceToolStripMenuItem_Click);
+            // 
+            // callsToolStripMenuItem
+            // 
+            this.callsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCallToolStripMenuItem});
+            this.callsToolStripMenuItem.Name = "callsToolStripMenuItem";
+            this.callsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.callsToolStripMenuItem.Text = "Звонки";
+            this.callsToolStripMenuItem.Click += new System.EventHandler(this.callsToolStripMenuItem_Click);
+            // 
+            // addCallToolStripMenuItem
+            // 
+            this.addCallToolStripMenuItem.Name = "addCallToolStripMenuItem";
+            this.addCallToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addCallToolStripMenuItem.Text = "Добавить";
+            this.addCallToolStripMenuItem.Click += new System.EventHandler(this.addCallToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.exitToolStripMenuItem.Text = "Выход";
+            // 
+            // referenceToolStripMenuItem1
+            // 
+            this.referenceToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.referenceToolStripMenuItem1.Name = "referenceToolStripMenuItem1";
+            this.referenceToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
+            this.referenceToolStripMenuItem1.Text = "О прогрмме";
+            // 
+            // moreInfoToolStripMenuItem
+            // 
+            this.moreInfoToolStripMenuItem.Name = "moreInfoToolStripMenuItem";
+            this.moreInfoToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
+            this.moreInfoToolStripMenuItem.Text = "Подробнее о выбранном";
+            this.moreInfoToolStripMenuItem.Click += new System.EventHandler(this.moreInfoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -126,12 +139,11 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Телефонные переговоры";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,15 +151,16 @@ namespace GUI
 
         #endregion
 
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ContactsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CallsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem популярныеToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem contactsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addContactToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem referenceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem callsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCallToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem referenceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moreInfoToolStripMenuItem;
     }
 }
 
