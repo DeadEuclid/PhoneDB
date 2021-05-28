@@ -36,7 +36,7 @@ namespace GUI
         private void Edit_Click(object sender, EventArgs e)
         {
             var context = new Context();
-            var call = context.Calls.Where(c => c == InputCall).First();
+            var call = context.Calls.Where(c => c.Id == InputCall.Id).First();
             GetCall(call);
             context.SaveChanges();
         }

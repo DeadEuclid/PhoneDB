@@ -12,7 +12,7 @@ namespace GUI
             Contact = contact;
             Name = contact.UsageName;
             PhoneNumber = contact.PhoneNumber;
-            inCount = Context.Calls.Where(call => call.Id == contact.Id && call.IsInput == true).Count().ToString();
+            inCount = Context.Calls.Where(call => call.Caller.Id == contact.Id && call.IsInput == true).Count().ToString();
             outCount = Context.Calls.Where(call => call.Caller.Id == contact.Id && call.IsInput == false).Count().ToString();
 
         }
