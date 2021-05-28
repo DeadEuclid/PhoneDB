@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace GUI
 {
 
-    public class Call
+    public class Call:IModel
     {
         public Call()
         {
@@ -32,7 +32,7 @@ namespace GUI
         public TimeSpan Duration { get; set; }
         [NotMapped]
 
-        public string DurationToString => Duration.ToString("hh:mm:ss");
+        public string DurationToString => Duration.ToString();
 
         public string Topic { get; set; }
         

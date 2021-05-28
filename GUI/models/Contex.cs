@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public class Context : DbContext
+    public class Context : DbContext,IModel
     {
         public Context() : base("PhoneDb")
         {

@@ -12,43 +12,45 @@ namespace GUI
 {
     public partial class Statistic : UserControl
     {
+        List<Call> inCalls;
+        List<Call> outCalls;
         public Statistic(Contact contact)
         {
             var context = new Context();
-            var inCall = GetInCall(context.Calls);
-            var outCall = GetInCall(context.Calls);
+            inCalls = (List<Call>)GetInCall(context.Calls.ToList()) ;
+             outCalls = (List<Call>)GetInCall(context.Calls.ToList());
             InitializeComponent();
-            if (contact!=null)
-            {
-                inCall = GetContactCall(inCall, contact);
-                outCall = GetContactCall(outCall, contact);
+
+            inCalls = (List<Call>)GetContactCall(inCalls, contact);
+            outCalls = (List<Call>)GetContactCall(outCalls, contact);
 
 
-                var sumInDuration= new TimeSpan(  inCall.Select(call=>call.Duration.Ticks).Sum());
-                var sumOutDuration= new TimeSpan(  outCall.Select(call=>call.Duration.Ticks).Sum());
 
-                CountIn.Text = inCall.Count().ToString();
-                CountOut.Text = outCall.Count().ToString();
+                var sumInDuration= new TimeSpan(  inCalls.ToList().Select(call=>call.Duration.Ticks).Sum());
+                var sumOutDuration= new TimeSpan(  outCalls.Select(call=>call.Duration.Ticks).Sum());
+
+                CountIn.Text = inCalls.Count().ToString();
+                CountOut.Text = outCalls.Count().ToString();
                 DurationIn.Text = sumInDuration.ToString();
                 DurationOut.Text = sumOutDuration.ToString();
-            }
-            else
-            {
-                CountIn.Text = inCall.Count().ToString();
-                CountOut.Text = outCall.Count().ToString();
-                DurationIn.Text =GetSumDuration(inCall).ToString();
-                DurationOut.Text = GetSumDuration(outCall).ToString();
-            }
+
         }
-        private IQueryable<Call> GetInCall(IQueryable<Call> calls)
-        { 
-        return calls.Where(call => call.IsInput);
-        }
-        private IQueryable<Call> GetContactCall(IQueryable<Call> calls,Contact contact)
+        public Statistic()
         {
-            return calls.Where(call=>call.Caller==contact);
+                CountIn.Text = inCalls.Count().ToString();
+                CountOut.Text = outCalls.Count().ToString();
+                DurationIn.Text =GetSumDuration(inCalls).ToString();
+                DurationOut.Text = GetSumDuration(outCalls).ToString();
         }
-        private TimeSpan GetSumDuration(IQueryable<Call> calls)
+        private ICollection<Call> GetInCall(ICollection<Call> calls)
+        { 
+        return calls.ToList().Where(call => call.IsInput).ToList();
+        }
+        private ICollection<Call> GetContactCall(ICollection<Call> calls,Contact contact)
+        {
+            return calls.Where(call=>call.Caller==contact).ToList();
+        }
+        private TimeSpan GetSumDuration(ICollection<Call> calls)
         {
             return new TimeSpan( calls.Select(call => call.Duration.Ticks).Sum());
         }

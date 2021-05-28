@@ -72,7 +72,7 @@ namespace GUI
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(200, 53);
+            this.label11.Location = new System.Drawing.Point(219, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 17);
             this.label11.TabIndex = 125;
@@ -82,7 +82,7 @@ namespace GUI
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(113, 53);
+            this.label9.Location = new System.Drawing.Point(122, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 17);
             this.label9.TabIndex = 124;
@@ -100,7 +100,7 @@ namespace GUI
             // hourStart
             // 
             this.hourStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.hourStart.Location = new System.Drawing.Point(115, 76);
+            this.hourStart.Location = new System.Drawing.Point(124, 76);
             this.hourStart.Name = "hourStart";
             this.hourStart.Size = new System.Drawing.Size(51, 22);
             this.hourStart.TabIndex = 122;
@@ -116,7 +116,7 @@ namespace GUI
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button3.Location = new System.Drawing.Point(182, 493);
+            this.button3.Location = new System.Drawing.Point(201, 493);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 32);
             this.button3.TabIndex = 120;
@@ -142,7 +142,7 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(20, 185);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(262, 34);
+            this.button1.Size = new System.Drawing.Size(281, 34);
             this.button1.TabIndex = 118;
             this.button1.Text = "Стоп таймер";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@ namespace GUI
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 137);
+            this.label6.Location = new System.Drawing.Point(130, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 17);
             this.label6.TabIndex = 115;
@@ -182,7 +182,7 @@ namespace GUI
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(224, 137);
+            this.label5.Location = new System.Drawing.Point(243, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 17);
             this.label5.TabIndex = 114;
@@ -239,7 +239,7 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Description.Location = new System.Drawing.Point(20, 319);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(262, 168);
+            this.Description.Size = new System.Drawing.Size(281, 168);
             this.Description.TabIndex = 109;
             this.Description.Text = "";
             // 
@@ -249,7 +249,7 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Topic.Location = new System.Drawing.Point(19, 274);
             this.Topic.Name = "Topic";
-            this.Topic.Size = new System.Drawing.Size(262, 22);
+            this.Topic.Size = new System.Drawing.Size(281, 22);
             this.Topic.TabIndex = 108;
             // 
             // hour
@@ -262,7 +262,7 @@ namespace GUI
             // minute
             // 
             this.minute.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.minute.Location = new System.Drawing.Point(131, 157);
+            this.minute.Location = new System.Drawing.Point(140, 157);
             this.minute.Maximum = new decimal(new int[] {
             60,
             0,
@@ -276,7 +276,7 @@ namespace GUI
             // second
             // 
             this.second.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.second.Location = new System.Drawing.Point(227, 157);
+            this.second.Location = new System.Drawing.Point(246, 157);
             this.second.Maximum = new decimal(new int[] {
             60,
             0,
@@ -291,7 +291,7 @@ namespace GUI
             // 
             this.dateStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateStart.Location = new System.Drawing.Point(203, 76);
+            this.dateStart.Location = new System.Drawing.Point(222, 76);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(79, 22);
             this.dateStart.TabIndex = 104;
@@ -306,7 +306,7 @@ namespace GUI
             "Исходящий"});
             this.Type.Location = new System.Drawing.Point(109, 9);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(173, 24);
+            this.Type.Size = new System.Drawing.Size(192, 24);
             this.Type.TabIndex = 103;
             // 
             // label12
@@ -325,19 +325,16 @@ namespace GUI
             this.caller.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.caller.FormattingEnabled = true;
-            this.caller.Items.AddRange(new object[] {
-            "Входящий",
-            "Исходящий"});
             this.caller.Location = new System.Drawing.Point(108, 225);
             this.caller.Name = "caller";
-            this.caller.Size = new System.Drawing.Size(173, 24);
+            this.caller.Size = new System.Drawing.Size(192, 24);
             this.caller.TabIndex = 126;
             // 
             // AddCall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 535);
+            this.ClientSize = new System.Drawing.Size(321, 535);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.caller);
             this.Controls.Add(this.label11);
@@ -363,7 +360,7 @@ namespace GUI
             this.Controls.Add(this.second);
             this.Controls.Add(this.dateStart);
             this.Controls.Add(this.Type);
-            this.MinimumSize = new System.Drawing.Size(276, 500);
+            this.MinimumSize = new System.Drawing.Size(339, 582);
             this.Name = "AddCall";
             this.Text = "Запись звонка";
             this.Load += new System.EventHandler(this.AddCall_Load);

@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,32 +29,18 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.contactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addContactToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.referenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.callsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referenceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.moreInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 418);
-            this.dataGridView1.TabIndex = 3;
             // 
             // menuStrip1
             // 
@@ -74,8 +60,7 @@ namespace GUI
             // contactsToolStripMenuItem
             // 
             this.contactsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addContactToolStripMenuItem1,
-            this.referenceToolStripMenuItem});
+            this.addContactToolStripMenuItem1});
             this.contactsToolStripMenuItem.Name = "contactsToolStripMenuItem";
             this.contactsToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.contactsToolStripMenuItem.Text = "Контакты";
@@ -87,13 +72,6 @@ namespace GUI
             this.addContactToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.addContactToolStripMenuItem1.Text = "Добавить";
             this.addContactToolStripMenuItem1.Click += new System.EventHandler(this.addContactToolStripMenuItem1_Click);
-            // 
-            // referenceToolStripMenuItem
-            // 
-            this.referenceToolStripMenuItem.Name = "referenceToolStripMenuItem";
-            this.referenceToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.referenceToolStripMenuItem.Text = "Справка";
-            this.referenceToolStripMenuItem.Click += new System.EventHandler(this.referenceToolStripMenuItem_Click);
             // 
             // callsToolStripMenuItem
             // 
@@ -124,43 +102,62 @@ namespace GUI
             this.referenceToolStripMenuItem1.Name = "referenceToolStripMenuItem1";
             this.referenceToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
             this.referenceToolStripMenuItem1.Text = "О прогрмме";
+            this.referenceToolStripMenuItem1.Click += new System.EventHandler(this.referenceToolStripMenuItem1_Click);
             // 
             // moreInfoToolStripMenuItem
             // 
+            this.moreInfoToolStripMenuItem.Enabled = false;
             this.moreInfoToolStripMenuItem.Name = "moreInfoToolStripMenuItem";
             this.moreInfoToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
             this.moreInfoToolStripMenuItem.Text = "Подробнее о выбранном";
+            this.moreInfoToolStripMenuItem.Visible = false;
             this.moreInfoToolStripMenuItem.Click += new System.EventHandler(this.moreInfoToolStripMenuItem_Click);
             // 
-            // Form1
+            // dataGrid
+            // 
+            this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGrid.Location = new System.Drawing.Point(0, 32);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowHeadersWidth = 51;
+            this.dataGrid.RowTemplate.Height = 24;
+            this.dataGrid.Size = new System.Drawing.Size(800, 418);
+            this.dataGrid.TabIndex = 3;
+            this.dataGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Телефонные переговоры";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem contactsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addContactToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem referenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem callsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem referenceToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moreInfoToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGrid;
     }
 }
 

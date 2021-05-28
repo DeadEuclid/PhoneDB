@@ -17,28 +17,32 @@ namespace GUI
         public ContactInfo(Contact contact)
         {
             InitializeComponent();
-            if (isAddForm= (contact!=null))
-            {
-                InputContact = contact;
-                Text = "Информация и контакте "+contact.UsageName;
-                secondName.Text = contact.SecondName;
-                midleName.Text = contact.MidleName;
-                firstName.Text = contact.FirstName;
-                nickName.Text = contact.Nick;
-                coment.Text = contact.Comment;
-                statisticPanel.Controls.Clear();
-                statisticPanel.Controls.Add( new Statistic(contact));
+            isAddForm = false;
+            InputContact = contact;
+            Text = "Информация о контакте " + contact.UsageName;
+            secondName.Text = contact.SecondName;
+            midleName.Text = contact.MidleName;
+            firstName.Text = contact.FirstName;
+            nickName.Text = contact.Nick;
+            coment.Text = contact.Comment;
+            phoneNum.Text = contact.PhoneNumber.ToString();
+            statisticPanel.Controls.Clear();
+            statisticPanel.Controls.Add(new Statistic(contact));
 
-            }
-            else
-            {
-            statisticPanel.Size =new Size(0, 0);
+        }
 
-                Text = "Добавление контакта";
-                EditOrAdd.Text = "Добавить";
-                Delete.Enabled = false;
-                Delete.Visible = false;
-            }
+
+        public ContactInfo()
+        {
+            InitializeComponent();
+            isAddForm = true;
+            statisticPanel.Size = new Size(0, 0);
+
+            Text = "Добавление контакта";
+            EditOrAdd.Text = "Добавить";
+            Delete.Enabled = false;
+            Delete.Visible = false;
+
 
         }
 
@@ -51,7 +55,7 @@ namespace GUI
         {
             Close();
         }
-        private Contact GetContact(Contact modifingContact)
+        private Contact AssemblyContact(Contact modifingContact)
         {
 
             modifingContact.SecondName = secondName.Text;
@@ -59,12 +63,13 @@ namespace GUI
             modifingContact.MidleName = midleName.Text;
             modifingContact.Nick = nickName.Text;
             modifingContact.Comment = coment.Text;
+            modifingContact.PhoneNumber =phoneNum.Text;
             return modifingContact;
         }
-        private Contact GetContact()
+        private Contact AssemblyContact()
         {
             var result = new Contact();
-            GetContact(result);
+            AssemblyContact(result);
 
             return result;
         }
@@ -75,16 +80,31 @@ namespace GUI
 
             if (isAddForm)
             {
-                context.Contacts.Add(GetContact());
+
+                GetContact=AssemblyContact();
+                context.Contacts.Add(GetContact);
                 context.SaveChanges();
+                DialogResult = DialogResult.OK;
+                Close();
             }
             else
             {
-                var contact= context.Contacts.Where(cont => cont == InputContact).First();
-                GetContact(contact);
+                if (context.Contacts.Any())
+                {
+                var contact = context.Contacts.Where(cont => cont.Id == InputContact.Id).First();
+                AssemblyContact(contact);
                 context.SaveChanges();
+                    Close();
+                }
+
             }
+
+        }
+        public Contact GetContact { get; private set; }
+        private void contactGroup_Enter(object sender, EventArgs e)
+        {
 
         }
     }
 }
+

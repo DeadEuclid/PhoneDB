@@ -35,6 +35,8 @@ namespace GUI
             this.Delete = new System.Windows.Forms.Button();
             this.EditOrAdd = new System.Windows.Forms.Button();
             this.contactGroup = new System.Windows.Forms.GroupBox();
+            this.phoneNum = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.firstName = new System.Windows.Forms.TextBox();
             this.coment = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +54,7 @@ namespace GUI
             // statisticPanel
             // 
             this.statisticPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.statisticPanel.Location = new System.Drawing.Point(6, 182);
+            this.statisticPanel.Location = new System.Drawing.Point(6, 190);
             this.statisticPanel.Name = "statisticPanel";
             this.statisticPanel.Size = new System.Drawing.Size(676, 128);
             this.statisticPanel.TabIndex = 18;
@@ -63,7 +65,7 @@ namespace GUI
             this.butonsGroup.Controls.Add(this.Cansel);
             this.butonsGroup.Controls.Add(this.Delete);
             this.butonsGroup.Controls.Add(this.EditOrAdd);
-            this.butonsGroup.Location = new System.Drawing.Point(5, 316);
+            this.butonsGroup.Location = new System.Drawing.Point(5, 324);
             this.butonsGroup.Name = "butonsGroup";
             this.butonsGroup.Size = new System.Drawing.Size(677, 51);
             this.butonsGroup.TabIndex = 17;
@@ -107,6 +109,8 @@ namespace GUI
             this.contactGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.contactGroup.Controls.Add(this.phoneNum);
+            this.contactGroup.Controls.Add(this.label6);
             this.contactGroup.Controls.Add(this.firstName);
             this.contactGroup.Controls.Add(this.coment);
             this.contactGroup.Controls.Add(this.label1);
@@ -119,16 +123,33 @@ namespace GUI
             this.contactGroup.Controls.Add(this.label5);
             this.contactGroup.Location = new System.Drawing.Point(6, 9);
             this.contactGroup.Name = "contactGroup";
-            this.contactGroup.Size = new System.Drawing.Size(683, 167);
+            this.contactGroup.Size = new System.Drawing.Size(683, 175);
             this.contactGroup.TabIndex = 16;
             this.contactGroup.TabStop = false;
             this.contactGroup.Text = "Контакт";
+            this.contactGroup.Enter += new System.EventHandler(this.contactGroup_Enter);
+            // 
+            // phoneNum
+            // 
+            this.phoneNum.Location = new System.Drawing.Point(115, 139);
+            this.phoneNum.Name = "phoneNum";
+            this.phoneNum.Size = new System.Drawing.Size(150, 22);
+            this.phoneNum.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 139);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 17);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Номер ";
             // 
             // firstName
             // 
-            this.firstName.Location = new System.Drawing.Point(100, 51);
+            this.firstName.Location = new System.Drawing.Point(115, 51);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(165, 22);
+            this.firstName.Size = new System.Drawing.Size(150, 22);
             this.firstName.TabIndex = 9;
             // 
             // coment
@@ -138,7 +159,7 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.coment.Location = new System.Drawing.Point(279, 37);
             this.coment.Name = "coment";
-            this.coment.Size = new System.Drawing.Size(388, 115);
+            this.coment.Size = new System.Drawing.Size(388, 123);
             this.coment.TabIndex = 12;
             this.coment.Text = "";
             // 
@@ -153,9 +174,9 @@ namespace GUI
             // 
             // nickName
             // 
-            this.nickName.Location = new System.Drawing.Point(100, 111);
+            this.nickName.Location = new System.Drawing.Point(115, 111);
             this.nickName.Name = "nickName";
-            this.nickName.Size = new System.Drawing.Size(165, 22);
+            this.nickName.Size = new System.Drawing.Size(150, 22);
             this.nickName.TabIndex = 11;
             // 
             // label2
@@ -169,9 +190,9 @@ namespace GUI
             // 
             // midleName
             // 
-            this.midleName.Location = new System.Drawing.Point(100, 79);
+            this.midleName.Location = new System.Drawing.Point(115, 79);
             this.midleName.Name = "midleName";
-            this.midleName.Size = new System.Drawing.Size(165, 22);
+            this.midleName.Size = new System.Drawing.Size(150, 22);
             this.midleName.TabIndex = 10;
             // 
             // label3
@@ -188,15 +209,15 @@ namespace GUI
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 17);
+            this.label4.Size = new System.Drawing.Size(99, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Имя записи";
+            this.label4.Text = "Имя контакта";
             // 
             // secondName
             // 
-            this.secondName.Location = new System.Drawing.Point(100, 21);
+            this.secondName.Location = new System.Drawing.Point(115, 21);
             this.secondName.Name = "secondName";
-            this.secondName.Size = new System.Drawing.Size(165, 22);
+            this.secondName.Size = new System.Drawing.Size(150, 22);
             this.secondName.TabIndex = 8;
             // 
             // label5
@@ -212,13 +233,13 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 376);
+            this.ClientSize = new System.Drawing.Size(695, 384);
             this.Controls.Add(this.statisticPanel);
             this.Controls.Add(this.butonsGroup);
             this.Controls.Add(this.contactGroup);
             this.MaximumSize = new System.Drawing.Size(713, 1000);
+            this.MinimumSize = new System.Drawing.Size(713, 431);
             this.Name = "ContactInfo";
-            this.Load += new System.EventHandler(this.ContactInfo_Load);
             this.butonsGroup.ResumeLayout(false);
             this.contactGroup.ResumeLayout(false);
             this.contactGroup.PerformLayout();
@@ -244,5 +265,7 @@ namespace GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox secondName;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox phoneNum;
+        private System.Windows.Forms.Label label6;
     }
 }
