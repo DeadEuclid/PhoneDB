@@ -111,6 +111,12 @@ namespace GUI
         {
 
         }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+            Close();
+        }
     }
 }
 

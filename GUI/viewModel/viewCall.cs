@@ -7,7 +7,7 @@ namespace GUI
         public viewCall(Call call)
         {
             Call = call;
-            Name = call.Caller.UsageName;
+            Name = call.Caller!=null? call.Caller.UsageName:"";
             Type = call.Type;
             Date = call.StartTimeToString;
             Duration = call.DurationToString;

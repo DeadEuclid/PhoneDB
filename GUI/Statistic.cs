@@ -17,8 +17,8 @@ namespace GUI
         public Statistic(Contact contact)
         {
             var context = new Context();
-            inCalls = (List<Call>)GetInCall(context.Calls.ToList()) ;
-             outCalls = (List<Call>)GetInCall(context.Calls.ToList());
+            inCalls = (List<Call>)GetCallOfType(context.Calls.ToList(),true) ;
+             outCalls = (List<Call>)GetCallOfType(context.Calls.ToList(),false);
             InitializeComponent();
 
             inCalls = (List<Call>)GetContactCall(inCalls, contact);
@@ -35,25 +35,16 @@ namespace GUI
                 DurationOut.Text = sumOutDuration.ToString();
 
         }
-        public Statistic()
-        {
-                CountIn.Text = inCalls.Count().ToString();
-                CountOut.Text = outCalls.Count().ToString();
-                DurationIn.Text =GetSumDuration(inCalls).ToString();
-                DurationOut.Text = GetSumDuration(outCalls).ToString();
-        }
-        private ICollection<Call> GetInCall(ICollection<Call> calls)
+
+        private ICollection<Call> GetCallOfType(ICollection<Call> calls,bool isInput)
         { 
-        return calls.ToList().Where(call => call.IsInput).ToList();
+        return calls.ToList().Where(call => call.IsInput==isInput).ToList();
         }
         private ICollection<Call> GetContactCall(ICollection<Call> calls,Contact contact)
         {
-            return calls.Where(call=>call.Caller==contact).ToList();
+            return calls.Where(call=>call.Caller.Id==contact.Id).ToList();
         }
-        private TimeSpan GetSumDuration(ICollection<Call> calls)
-        {
-            return new TimeSpan( calls.Select(call => call.Duration.Ticks).Sum());
-        }
+
 
         private void splitter2_SplitterMoved(object sender, SplitterEventArgs e)
         {

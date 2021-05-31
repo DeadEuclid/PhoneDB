@@ -16,17 +16,20 @@ namespace GUI
         {
             var context = new Context();
             InitializeComponent();
+           
             timer1.Start();
-            curent = second;
+           
             var time = DateTime.Now;
+
             minuteStart.Value = time.Minute;
             hourStart.Value = time.Hour;
+
             caller.DataSource = context.Contacts.ToList();
             caller.ValueMember="Id";
             caller.DisplayMember = "Title";
 
         }
-        private NumericUpDown curent;
+       
         private void timer1_Tick(object sender, EventArgs e)
         {
             second.Value++;
@@ -48,7 +51,14 @@ namespace GUI
 
         private void minute_ValueChanged(object sender, EventArgs e)
         {
+            if (minute.Value == 60)
+            {
+                second.Value = 0;
+                second.Update();
+                minute.Value++;
 
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,7 +91,7 @@ namespace GUI
 
             result.StartTime =
                 new DateTime(dateStartValue.Year, dateStartValue.Month, dateStartValue.Day,
-                (int)hour.Value, (int)minute.Value, (int)second.Value);
+                (int)hourStart.Value, (int)minuteStart.Value,0);
 
             result.IsInput = Type.Text == "Входящий" ? true : false;
             result.Duration = new TimeSpan((int)hour.Value, (int)minute.Value, (int)second.Value);

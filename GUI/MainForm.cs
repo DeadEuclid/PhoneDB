@@ -20,11 +20,13 @@ namespace GUI
             InitializeComponent();
             updateCalls();
             updateContacts();
+            
         }
         private BindingList<viewCall> viewCalls;
         private BindingList<viewContact> viewContacts;
         private void contactsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             dataGrid.DataSource = viewContacts;
 
         }
@@ -64,7 +66,26 @@ namespace GUI
             {
                 moreInfo = new ContactInfo((Contact)((viewContact)choseItem).GetData());
             }
-            moreInfo.ShowDialog();
+            var dResult= moreInfo.ShowDialog();
+            if (dResult==DialogResult.Abort)
+            {
+                if (choseItem is viewCall)
+                {
+                    int id = ((Call)((viewCall)choseItem).GetData()).Id;
+                    var item = Context.Calls.Find(id);
+                    Context.Calls.Remove(item);
+                    viewCalls.Remove((viewCall)choseItem);
+                }
+                else
+                {
+                    int id = ((Contact)((viewContact)choseItem).GetData()).Id;
+                    var item = Context.Contacts.Find(id);
+                    Context.Contacts.Remove(item);
+                    viewContacts.Remove((viewContact)choseItem);
+
+                }
+            }
+            Context.SaveChanges();
             updateCalls();
             updateContacts();
         }

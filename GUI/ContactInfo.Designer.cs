@@ -93,6 +93,7 @@ namespace GUI
             this.Delete.TabIndex = 7;
             this.Delete.Text = "Удалить";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // EditOrAdd
             // 
